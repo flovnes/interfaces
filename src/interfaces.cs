@@ -26,6 +26,8 @@ namespace Lab {
             denom = denominator / gcd;
         }
 
+        public MyFrac(MyFrac that) : this(that.nom, that.denom) {}
+
         public MyFrac Add(MyFrac that) {
             BigInteger f1 = nom * that.denom + that.nom * denom;
             BigInteger f2 = denom * that.denom;
@@ -60,6 +62,8 @@ namespace Lab {
             re = real;
             im = imaginary;
         }
+
+        public MyComplex(MyComplex that) : this(that.re, that.im) {}
 
         public MyComplex Add(MyComplex that) {
             return new MyComplex(re + that.re, im + that.im);
